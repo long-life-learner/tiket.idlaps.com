@@ -20,7 +20,7 @@ class Event extends Model
         'status',
         'max_participants',
         'total_prize',
-        'price',
+        // 'price',
         'winner_name',
         'winner_number'
     ];
@@ -28,7 +28,7 @@ class Event extends Model
     protected $casts = [
         'date' => 'datetime',
         'total_prize' => 'decimal:2',
-        'price' => 'decimal:2',
+        // 'price' => 'decimal:2',
         'is_featured' => 'boolean',
     ];
 

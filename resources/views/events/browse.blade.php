@@ -58,10 +58,10 @@
                          <div class="absolute bottom-0 left-0 right-0 p-3">
                              <h3 class="font-bold leading-tight">{{ Str::limit($event->title, 24) }}</h3>
                              <div class="flex items-center mt-2">
-                                 <img src="{{ asset('assets/icons/dollar-circle.svg') }}" alt="Price"
+                                 <img src="{{ asset('assets/icons/gift.svg') }}" alt="Total Hadiah"
                                      class="w-5 h-5" />
-                                 <p class="ml-1.5 font-semibold text-sm">Rp
-                                     {{ number_format($event->price, 0, ',', '.') }}
+                                 <p class="ml-1.5 font-semibold text-sm">Total Hadiah - Rp
+                                     {{ number_format($event->total_prize, 0, ',', '.') }}
                                  </p>
                              </div>
                          </div>
@@ -85,10 +85,10 @@
                          <div class="absolute bottom-0 left-0 right-0 p-3">
                              <h3 class="font-bold leading-tight">{{ Str::limit($event->title, 24) }}</h3>
                              <div class="flex items-center mt-2">
-                                 <img src="{{ asset('assets/icons/dollar-circle.svg') }}" alt="Price"
+                                 <img src="{{ asset('assets/icons/gift.svg') }}" alt="Total Hadiah"
                                      class="w-5 h-5" />
-                                 <p class="ml-1.5 font-semibold text-sm">Rp
-                                     {{ number_format($event->price, 0, ',', '.') }}
+                                 <p class="ml-1.5 font-semibold text-sm">Total Hadiah - Rp
+                                     {{ number_format($event->total_prize, 0, ',', '.') }}
                                  </p>
                              </div>
                          </div>

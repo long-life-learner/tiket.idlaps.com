@@ -134,8 +134,8 @@ class EventForm
 
     private static function getRegistrationPricingSection(): Section
     {
-        return Section::make('Pendaftaran & Harga')
-            ->description('Batas peserta dan informasi harga')
+        return Section::make('Pendaftaran')
+            ->description('Batas peserta dan informasi hadiah')
             ->icon('heroicon-o-currency-dollar')
             ->schema([
                 TextInput::make('max_participants')
@@ -145,15 +145,15 @@ class EventForm
                     ->minValue(1)
                     ->placeholder('Masukkan jumlah maksimal peserta')
                     ->suffix('orang'),
-                TextInput::make('price')
-                    ->label('Biaya Pendaftaran')
-                    ->mask(RawJs::make('$money($input)'))
-                    ->stripCharacters(',')
-                    ->numeric()
-                    ->nullable()
-                    ->prefix('Rp')
-                    ->placeholder('Masukkan biaya pendaftaran')
-                    ->minValue(0),
+                // TextInput::make('price')
+                //     ->label('Biaya Pendaftaran')
+                //     ->mask(RawJs::make('$money($input)'))
+                //     ->stripCharacters(',')
+                //     ->numeric()
+                //     ->nullable()
+                //     ->prefix('Rp')
+                //     ->placeholder('Masukkan biaya pendaftaran')
+                //     ->minValue(0),
                 TextInput::make('total_prize')
                     ->label('Total Hadiah')
                     ->mask(RawJs::make('$money($input)'))
@@ -241,7 +241,13 @@ class EventForm
                     ->defaultItems(0)
                     ->addActionLabel('Buat Kelas')
                     ->reorderable()
-                    ->collapsible(),
+                    ->collapsible()
+                    ->minItems(1)
+                    ->required()
+                    ->validationMessages([
+                        'minItems' => 'Minimal harus ada 1 (satu) kelas yang disediakan.',
+                        'required' => 'Minimal harus ada 1 (satu) kelas yang disediakan.',
+                    ]),
             ])
             ->columns(1)
             ->columnSpanFull();

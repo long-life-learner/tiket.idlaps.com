@@ -195,7 +195,7 @@
                     <div
                         class="bg-[#F6F8FA] rounded-full px-4 py-3.5 flex items-center gap-2.5 border transition-colors hover:border-[#FF7A00] @error('class_id') border-red-500 @enderror">
                         <img src="{{ asset('assets/icons/people.svg') }}" class="w-6 h-6" alt="class" />
-                        <select name="class_id"
+                        <select name="event_class_id"
                             class="bg-transparent flex-1 text-base text-[#06071C] placeholder-gray-400 outline-none appearance-none cursor-pointer" required>
                             <option value="" disabled selected>Pilih kelas</option>
                             @foreach ($event->classes as $class)

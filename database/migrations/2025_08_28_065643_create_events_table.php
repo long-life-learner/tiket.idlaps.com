@@ -24,7 +24,7 @@ return new class extends Migration
             $table->enum('status', ['open', 'closed', 'ended'])->default('open');
             $table->integer('max_participants');
             $table->decimal('total_prize', 15, 2);
-            $table->decimal('price', 12, 2);
+            // $table->decimal('price', 12, 2);
             $table->string('winner_name')->nullable();
             $table->string('winner_number')->nullable();
             $table->timestamps();

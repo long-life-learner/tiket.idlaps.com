@@ -85,10 +85,10 @@ class EventTable
                     ->money('IDR')
                     ->sortable()
                     ->toggleable(),
-                Tables\Columns\TextColumn::make('price')
-                    ->label('Harga')
-                    ->money('IDR')
-                    ->sortable(),
+                // Tables\Columns\TextColumn::make('price')
+                //     ->label('Harga')
+                //     ->money('IDR')
+                //     ->sortable(),
                 Tables\Columns\TextColumn::make('winner_name')
                     ->label('Pemenang')
                     ->placeholder('Belum ada pemenang')

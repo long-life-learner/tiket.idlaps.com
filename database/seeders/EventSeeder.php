@@ -38,7 +38,7 @@ class EventSeeder extends Seeder
             'date' => '2025-11-18 06:00:00',
             'max_participants' => 1000,
             'total_prize' => 120000000,
-            'price' => 200000,
+            // 'price' => 200000,
             'status' => 'open'
 
         ]);
@@ -53,7 +53,7 @@ class EventSeeder extends Seeder
             'date' => '2025-11-18 06:00:00',
             'max_participants' => 500,
             'total_prize' => 120000000,
-            'price' => 200000,
+            // 'price' => 200000,
             'status' => 'open'
         ]);
 
@@ -67,7 +67,7 @@ class EventSeeder extends Seeder
             'date' => '2024-08-18 08:00:00',
             'max_participants' => 30,
             'total_prize' => 120000000,
-            'price' => 8500000,
+            // 'price' => 8500000,
             'status' => 'open'
         ]);
 
@@ -81,7 +81,7 @@ class EventSeeder extends Seeder
             'date' => '2024-09-15 09:00:00',
             'max_participants' => 50,
             'total_prize' => 50000000,
-            'price' => 12000000,
+            // 'price' => 12000000,
             'status' => 'closed'
         ]);
 
@@ -95,7 +95,7 @@ class EventSeeder extends Seeder
             'date' => '2024-07-20 10:00:00',
             'max_participants' => 20,
             'total_prize' => 50000000,
-            'price' => 5000000,
+            // 'price' => 5000000,
             'status' => 'ended',
             'winner_name' => 'Angga Risky',
             'winner_number' => '192'
@@ -111,7 +111,7 @@ class EventSeeder extends Seeder
             'date' => '2024-10-10 14:00:00',
             'max_participants' => 16,
             'total_prize' => 25000000,
-            'price' => 12000000,
+            // 'price' => 12000000,
             'status' => 'open'
         ]);
 
@@ -125,7 +125,7 @@ class EventSeeder extends Seeder
             'date' => '2024-11-15 06:00:00',
             'max_participants' => 100,
             'total_prize' => 200000000,
-            'price' => 15000000,
+            // 'price' => 15000000,
             'status' => 'open'
         ]);
 
@@ -139,7 +139,7 @@ class EventSeeder extends Seeder
             'date' => '2024-12-20 10:00:00',
             'max_participants' => 32,
             'total_prize' => 80000000,
-            'price' => 10000000,
+            // 'price' => 10000000,
             'status' => 'closed'
         ]);
 
@@ -151,7 +151,7 @@ class EventSeeder extends Seeder
             'date' => '2024-11-05 19:00:00',
             'max_participants' => 24,
             'total_prize' => 15000000,
-            'price' => 5000000,
+            // 'price' => 5000000,
             'status' => 'closed'
         ]);
     }
