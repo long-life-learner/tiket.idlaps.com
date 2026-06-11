@@ -69,16 +69,13 @@ class BookingRepository implements BookingRepositoryInterface
 
     public function createBooking(Event $event)
     {
-        // $subTotal = $event->price;
-        // $tax = $subTotal * 0.11;
-        // $insurance = 0;
         $bookingData = session('booking_data');
-        // GET EVENT CLASS PRICE BY ID
-        $classPrice = app(EventRepository::class)->getEventClassPriceById($bookingData['event_class_id']);
-        // GET CLASS NAME BY ID
-        $className = app(EventRepository::class)->getEventClassNameById($bookingData['event_class_id']);
-        $grandTotal = $classPrice;
 
+        // Get event class price and name
+        $classPrice = app(EventRepository::class)->getEventClassPriceById($bookingData['event_class_id']);
+        $className = app(EventRepository::class)->getEventClassNameById($bookingData['event_class_id']);
+
+        // Create booking record first
         $transaction = Booking::create([
             'event_id' => $event->id,
             'event_class_id' => $bookingData['event_class_id'],
@@ -88,39 +85,21 @@ class BookingRepository implements BookingRepositoryInterface
             'subtotal' => 0,
             'tax' => 0,
             'insurance' => 0,
-            'total' => $grandTotal,
+            'total' => $classPrice,
         ]);
 
-        // Set your Merchant Server Key
-        \Midtrans\Config::$serverKey = config('midtrans.serverKey');
-        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        \Midtrans\Config::$isProduction = config('midtrans.isProduction');
-        // Set sanitization on (default)
-        \Midtrans\Config::$isSanitized = config('midtrans.isSanitized');
-        // Set 3DS transaction for credit card to true
-        \Midtrans\Config::$is3ds = config('midtrans.is3ds');
+        // Build Pakasir payment URL
+        // Format: https://app.pakasir.com/pay/{slug}/{amount}?order_id={order_id}
+        $pakasirSlug = config('pakasir.slug');
+        $amount = (int) $classPrice;
+        $orderId = $transaction->code;
 
-        $params = [
-            'transaction_details' => [
-                'order_id' => $transaction->code,
-                'gross_amount' => $transaction->total,
-            ],
-            'customer_details' => [
-                'first_name' => $transaction->name,
-                'email' => $transaction->email,
-                'phone' => $transaction->phone,
-            ],
-            'item_details' => [
-                [
-                    'id' => $bookingData['event_class_id'],
-                    'price' => $transaction->total,
-                    'quantity' => 1,
-                    'name' => $className . ' - ' . $event->title,
-                ],
-            ],
-        ];
+        // Build redirect URL back to our finished page
+        $baseUrl = config('pakasir.base_url');
+        $redirectUrl = urlencode(route('bookings.finished', ['order_id' => $transaction->code], true));
 
-        $paymentUrl = \Midtrans\Snap::createTransaction($params)->redirect_url;
+        // Construct payment URL
+        $paymentUrl = "{$baseUrl}/pay/{$pakasirSlug}/{$amount}?order_id={$orderId}&redirect={$redirectUrl}";
 
         return $paymentUrl;
     }

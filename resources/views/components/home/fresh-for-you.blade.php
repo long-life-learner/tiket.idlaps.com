@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Storage;
             <div class="font-semibold text-lg text-[#111223] leading-snug">Fresh For You</div>
             <div class="text-[#A6ACAF] text-sm font-normal leading-tight">Jadikan tantangan berarti</div>
         </div>
-        <button
-            class="bg-white rounded-full px-5 py-2 font-semibold text-[16px] text-[#111223] shadow-sm tracking-normal mr-4 border border-gray-200 transition-colors hover:border-[#FF7A00]">Lihat Semua</button>
+        <!-- <button
+            class="bg-white rounded-full px-5 py-2 font-semibold text-[16px] text-[#111223] shadow-sm tracking-normal mr-4 border border-gray-200 transition-colors hover:border-[#FF7A00]">Lihat Semua</button> -->
     </div>
 
     <section class="space-y-4 pr-2">

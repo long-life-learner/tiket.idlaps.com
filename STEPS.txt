@@ -12,4 +12,4 @@ MIDTRANS_IS_SANITIZED=true
 MIDTRANS_IS_3DS=true
 php artisan storage:link
 https://d4dfcbedbd66.ngrok-free.app/booking-finished
-https://d4dfcbedbd66.ngrok-free.app/api/midtrans-callbak
+https://d4dfcbedbd66.ngrok-free.app/api/midtrans-callback

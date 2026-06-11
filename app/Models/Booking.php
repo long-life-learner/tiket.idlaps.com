@@ -15,6 +15,10 @@ class Booking extends Model
         'phone',
         'email',
         'payment_status',
+        'payment_method',
+        'transaction_id',
+        'paid_at',
+        'webhook_data',
         'is_checked_in',
         'checked_in_at',
         'subtotal',
@@ -30,6 +34,8 @@ class Booking extends Model
         'total' => 'decimal:2',
         'is_checked_in' => 'boolean',
         'checked_in_at' => 'datetime',
+        'paid_at' => 'datetime',
+        'webhook_data' => 'array',
     ];
 
     public function event(): BelongsTo

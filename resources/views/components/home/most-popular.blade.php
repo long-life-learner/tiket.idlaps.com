@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Storage;
 <section class="bg-[#F6F8FA] pt-6 pb-2">
     <div class="flex items-center justify-between mb-4 px-4">
         <div>
-            <div class="font-semibold text-[20px] text-[#111223] leading-[28px]">Most Popular</div>
-            <div class="text-[#A6ACAF] text-sm font-normal leading-tight">Didukung oleh negara</div>
+            <div class="font-semibold text-[20px] text-[#111223] leading-[28px]">Event Populer</div>
+            <!-- <div class="text-[#A6ACAF] text-sm font-normal leading-tight">Event yang paling banyak dicari</div> -->
         </div>
-        <button
-            class="bg-white rounded-full px-5 py-2 font-semibold text-[16px] text-[#111223] shadow-sm tracking-tight border border-gray-200 transition-colors hover:border-[#FF7A00]">Lihat Semua</button>
+        <!-- <button
+            class="bg-white rounded-full px-5 py-2 font-semibold text-[16px] text-[#111223] shadow-sm tracking-tight border border-gray-200 transition-colors hover:border-[#FF7A00]">Lihat Semua</button> -->
     </div>
     <div class="overflow-x-auto overflow-y-hidden hide-scrollbar min-h-[300px]">
         <div class="flex gap-4 pb-4 pl-4">
@@ -44,7 +44,7 @@ use Illuminate\Support\Facades\Storage;
                     </div>
                     <div class="flex items-center gap-1 text-white text-xs font-semibold mb-1">
                         <img src="{{ asset('assets/icons/gift.svg') }}" class="w-3 h-3" />
-                        Hadiah Rp {{ number_format($event->total_prize, 0, ',', '.') }}
+                        Total Hadiah <br>Rp {{ number_format($event->total_prize, 0, ',', '.') }}
                     </div>
                     <div class="flex items-center gap-1 text-white text-xs font-normal mb-3">
                         <img src="{{ asset('assets/icons/crown.svg') }}"

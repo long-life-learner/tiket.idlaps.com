@@ -7,7 +7,7 @@
     <div class="px-4 pt-4 pb-0">
         <div class="flex items-center justify-between mb-3">
             <div>
-                <div class="font-semibold text-[20px] text-[#111223] leading-[28px]">Kategori Terbaik</div>
+                <div class="font-semibold text-[20px] text-[#111223] leading-[28px]">Kategori</div>
             </div>
         </div>
     </div>

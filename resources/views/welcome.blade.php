@@ -30,7 +30,7 @@
                 <div class="rounded-2xl border border-gray-200 p-4 flex items-center gap-3 hover:border-[#FF7A00] transition-colors">
                     <img src="{{ asset('assets/icons/crown.svg') }}" class="w-6 h-6" alt="Kategori" />
                     <div class="text-left">
-                        <div class="text-sm font-semibold text-[#18192B]">Kategori Terbaik</div>
+                        <div class="text-sm font-semibold text-[#18192B]">Kategori</div>
                         <div class="text-xs text-[#9BA4A6]">Pilih olahraga favoritmu</div>
                     </div>
                 </div>
