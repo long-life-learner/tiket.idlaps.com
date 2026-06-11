@@ -59,11 +59,12 @@ class BookingRepository implements BookingRepositoryInterface
     public function saveInformation(array $data)
     {
         session(['booking_data' => [
-            'event_id' => $data['event_id'],
-            'event_class_id' => $data['event_class_id'],
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'phone' => $data['phone'],
+            'event_id'      => $data['event_id'],
+            'event_class_id'=> $data['event_class_id'],
+            'name'          => $data['name'],
+            'email'         => $data['email'],
+            'phone'         => $data['phone'],
+            'jersey_size'   => $data['jersey_size'] ?? null,
         ]]);
     }
 

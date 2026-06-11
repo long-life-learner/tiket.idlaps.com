@@ -43,7 +43,7 @@ class EventRepository implements EventRepositoryInterface
     public function getBySlug(string $slug)
     {
         return Event::where('slug', $slug)
-            ->with('category', 'venue')
+            ->with('category', 'venue', 'classes')
             ->withCount('bookings')
             ->first();
     }
